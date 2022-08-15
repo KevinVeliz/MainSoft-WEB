@@ -1,0 +1,59 @@
+.card-cargos {
+  background-color: #3d3d3d;
+}
+
+.button {
+  background-color: #38a49d;
+  width: 150px;
+}
+
+.button-agregar{
+  background-color: #38a49d;
+}
+
+
+.page {
+  background: linear-gradient(220.55deg, #c5edf5 0%, #4a879a 100%);
+}
+
+
+.card-eliminar{
+  height: 70vh;
+}
+
+.card-actualizar{
+  height: 70vh;
+}
+
+@media screen and (max-width: 2000px) {
+  .card-general-cargos{
+    margin-left: 10px;
+  }
+  .card-cargos {
+   
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card-general-cargos {
+    width: 280px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card-general-cargos {
+    width: 230px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  .card-general-cargos {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .card-cargos {
+   
+  }
+}

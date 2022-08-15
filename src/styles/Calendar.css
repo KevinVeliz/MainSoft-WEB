@@ -1,0 +1,35 @@
+.list {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  max-width: 400px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.list_item {
+  position: relative;
+  width: 100%;
+}
+
+.list_item.active::before {
+  content: "";
+  position: absolute;
+  background: #38a49d;
+  width: 100%;
+  max-width: 60px;
+  height: 110px;
+  top: -75px;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 6px 5px 0px rgb(85 119 102 / 31%);
+}
+
+.list_item span {
+  text-align: center;
+  display: block;
+  position: relative;
+  z-index: 2;
+}

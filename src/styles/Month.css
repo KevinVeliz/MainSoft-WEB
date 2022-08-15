@@ -1,0 +1,20 @@
+#modal-month{
+    
+}
+
+.card-content-month {
+    height: 500px;
+  }
+  
+
+@media screen and (max-width: 768px){
+    #modal-month{
+        width: 100vh;
+        
+    }
+    #table-content{
+        
+        margin-left: 20px;
+    }
+}
+    
