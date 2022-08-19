@@ -38,10 +38,10 @@ export const PagePrincipaly = () => {
     <div>
       <CalendarComp />
       <div> Page_Principaly </div>
-      <div className="mt-8 flex flex-col gap-y-4">
+      <div className="flex flex-col mt-8 gap-y-4">
         <button
           onClick={handleClickInicio}
-          className="py-2 bg-black text-white text-lg rounded"
+          className="py-2 text-lg text-white bg-black rounded"
         >
           {" "}
           INICIAR SESIÓN{" "}
