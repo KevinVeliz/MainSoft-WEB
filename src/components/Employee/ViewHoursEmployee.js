@@ -242,18 +242,15 @@ const ViewHoursEmployee = () => {
   return (
     <div className="h-screen overflow-hidden bg-gradient-to-b from-gray-50 to-teal-50 md:overflow-y-auto">
       
-    <div className=" sm:flex sm:flex-col md:flex md:flex-col 
-    lg:grid lg:grid-cols-2 ">
+    <div className=" sm:flex sm:flex-col md:flex md:flex-col lg:grid lg:grid-cols-2">
       <div className="flex justify-center mt-5 ">
-        <div className="relative block p-6 rounded-lg bg-white w-10/12 
-        shadow-xl ring-1 ring-gray-900/5 
-        ">
+        <div className="relative block w-10/12 p-6 bg-white rounded-lg shadow-xl ring-1 ring-gray-900/5 ">
           <div className="flex items-center justify-center w-10/12">
-            <div className="font-bold mb-5">
+            <div className="mb-5 font-bold">
               <h1>HORAS DIARIAS</h1>
             </div>
           </div>
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
             <div className="">
               <input
                 name="start"
@@ -269,11 +266,9 @@ const ViewHoursEmployee = () => {
             </div>
            
             <button
-                className="bg-gray-300 ml-5
-            text-black py-2 px-4  focus:outline-none focus:shadow-outline 
-            rounded-lg"
+                className="px-4 py-2 ml-5 text-black bg-gray-300 rounded-lg focus:outline-none focus:shadow-outline"
             onClick={async () => await consulta()}>
-                <div className="flex flex-nowrap justify-center items-center">
+                <div className="flex items-center justify-center flex-nowrap">
                   <div>
                     <AiOutlineSearch className="mr-2" />
                   </div>
@@ -283,10 +278,9 @@ const ViewHoursEmployee = () => {
           </div>
         <div >
 
-        <div className="flex justify-center items-center">
+        <div className="flex items-center justify-center">
 
-        <div className="w-9/12 flex justify-center items-center border-2 divide-y divide-gray-200/50
-        mt-5 ">
+        <div className="flex items-center justify-center w-9/12 mt-5 border-2 divide-y divide-gray-200/50 ">
 
           <table >
             <thead>
@@ -321,17 +315,16 @@ const ViewHoursEmployee = () => {
         </div>
       </div>
 
-      <div className="flex justify-center mt-5  ">
-        <div className="card-mes block p-6 rounded-lg  bg-white w-10/12  h-5/6 shadow-xl ring-1 ring-gray-900/5
-        md:h-auto">
+      <div className="flex justify-center mt-5 ">
+        <div className="block w-10/12 p-6 bg-white rounded-lg shadow-xl card-mes h-5/6 ring-1 ring-gray-900/5 md:h-auto">
           <div className="flex items-center justify-center ">
             <div className="flex items-center justify-center ">
-              <div className="font-bold mb-5">
+              <div className="mb-5 font-bold">
                 <h1>HORAS MENSUALES</h1>
               </div>
             </div>
           </div>
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
             <div className="relative">
               <input
                 type="month"
@@ -343,13 +336,11 @@ const ViewHoursEmployee = () => {
 
        
             <button
-                className="bg-gray-300 ml-5
-            text-black py-2 px-4  focus:outline-none focus:shadow-outline 
-            rounded-lg"
+                className="px-4 py-2 ml-5 text-black bg-gray-300 rounded-lg focus:outline-none focus:shadow-outline"
             onClick={async () => {
               await consultaMes();
             }}>
-                <div className="flex flex-nowrap justify-center items-center">
+                <div className="flex items-center justify-center flex-nowrap">
                   <div>
                     <AiOutlineSearch className="mr-2" />
                   </div>
@@ -358,28 +349,28 @@ const ViewHoursEmployee = () => {
               </button>
           </div>
 
-          <div className="p-5 grid grid-rows-1  justify-center items-center ">
+          <div className="grid items-center justify-center grid-rows-1 p-5 ">
             <div className="border-2 divide-y divide-gray-200" >
-              <div className="p-3 grid grid-cols-2 ">
+              <div className="grid grid-cols-2 p-3 ">
                 <div> Día </div>
-                <div className=" flex justify-center items-center"> Horas de trabajo </div>
+                <div className="flex items-center justify-center "> Horas de trabajo </div>
               </div>
-              <div className="divide-y divide-gray-200  justify-center items-center">
+              <div className="items-center justify-center divide-y divide-gray-200">
 
                   {historialMes.sort(function (a, b) {
                     return a.id - b.id;
                   }).map((item) => (
-                    <div className="p-3 grid grid-cols-2 " key={item.id}>
+                    <div className="grid grid-cols-2 p-3 " key={item.id}>
                       <div>{Number(item.id)}</div>
 
-                      <div className=" flex justify-center items-center"> {item.totalDay}</div>
+                      <div className="flex items-center justify-center "> {item.totalDay}</div>
                     </div>
                   ))}
             <div className="divide-y divide-blue-500 ">
               {historialMes.length !== 0 && (
-                <div className="p-3 flex flex-col justify-center items-center">
+                <div className="flex flex-col items-center justify-center p-3">
                   <div>Horas Mensuales</div>
-                  <div className="pl-3 flex justify-center items-center">{horasMensuales}</div>
+                  <div className="flex items-center justify-center pl-3">{horasMensuales}</div>
                 </div>
               )}
               </div>
@@ -394,9 +385,9 @@ const ViewHoursEmployee = () => {
           
 
         <div className="mt-5">
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
             <button className="" onClick={goBack}>
-              <div className="flex flex-row space-x-2 text-black font-bold">
+              <div className="flex flex-row space-x-2 font-bold text-black">
                 <div className="mt-1">
                   <IoMdArrowBack />
                 </div>

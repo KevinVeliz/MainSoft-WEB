@@ -190,8 +190,9 @@ const EmployeeView = () => {
     swal({
       text: "Imagen de perfil modificada correctamente.",
       icon: "success",
-      button: "Aceptar",
     });
+
+    window.location.reload(true);
   }
   const validButtonSave=() => {
     if(isLoading===true){
