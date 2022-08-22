@@ -1,3 +1,13 @@
 .card-content {
   height: 700px;
 }
+
+
+@media (max-width: 740px) {
+  .card-content {
+    height: 600px;
+    width: 650px;
+    padding-top: 600px;
+  }
+}
+

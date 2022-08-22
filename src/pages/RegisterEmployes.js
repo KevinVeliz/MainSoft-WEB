@@ -345,10 +345,10 @@ export const RegisterEmployes = () => {
   return (
 
     <div className="flex">
-      <div className="w-full flex items-center justify-center lg:w-1/2">
-        <div className="px-10 py-20 rounded-3xl border-2 border-gray-100">
+      <div className="flex items-center justify-center w-full lg:w-1/2">
+        <div className="px-10 py-20 border-2 border-gray-100 rounded-3xl">
 
-          <h1 className="text-3xl font-semibold items-center text-center">
+          <h1 className="items-center text-3xl font-semibold text-center">
             REGISTRO DE EMPLEADOS
           </h1>
 
@@ -434,7 +434,7 @@ export const RegisterEmployes = () => {
               </div>
 
 
-              <div className=" relative ">
+              <div className="relative ">
                 <div>
                   <label className="text-lg font-medium">Contraseña</label>
                   <input
@@ -453,7 +453,7 @@ export const RegisterEmployes = () => {
                   />
 
                 </div>
-                <div className="text-2xl absolute  top-12 right-5">
+                <div className="absolute text-2xl top-12 right-5">
                   {open === false ? (
                     <AiFillEye onClick={toggle} />
                   ) : (
@@ -472,9 +472,9 @@ export const RegisterEmployes = () => {
                 <select
                   value={rol}
                   onChange={cambioRol}
-                  className="ml-10 w-9/12 border-gray-100 border-1 rounded-lg py-2 px-2"
+                  className="w-9/12 px-2 py-2 ml-10 border-gray-100 rounded-lg border-1"
                 >
-                  <option>Seleccione un rol</option>
+                  <option selected="true" disabled="disabled">Seleccione un rol</option>
                   <option >Empleado</option>
                   <option >Gerente</option>
                   <option >Admin</option>
@@ -488,9 +488,9 @@ export const RegisterEmployes = () => {
                 <select
                   value={nuevoCargo}
                   onChange={cambioCargo}
-                   className="ml-6 w-9/12 border-gray-100 border-1 rounded-lg py-2 px-2"
+                   className="w-9/12 px-2 py-2 ml-6 border-gray-100 rounded-lg border-1"
                 >
-                  <option>Seleccione un cargo</option>
+                  <option selected="true" disabled="disabled">Seleccione un cargo</option>
                   {todosCargos.map((item) => (
                     <option>{item.id}</option>
                   ))}
@@ -498,7 +498,7 @@ export const RegisterEmployes = () => {
              
               </div>
 
-              <div className="mt-8 flex flex-col gap-y-4">
+              <div className="flex flex-col mt-8 gap-y-4">
                 <button
                   disabled={validButton()}
                   type="submit"
@@ -514,9 +514,9 @@ export const RegisterEmployes = () => {
 
             </div>
           </form>
-          <div className="mt-8 flex flex-col gap-y-4">
+          <div className="flex flex-col mt-8 gap-y-4">
             <button
-              className="py-2 bg-black text-white text-lg rounded"
+              className="py-2 text-lg text-white bg-black rounded"
               onClick={handleClickRegisterEmploye}
             >
 
@@ -527,12 +527,12 @@ export const RegisterEmployes = () => {
 
       </div>
 
-      <div className="hidden lg:flex h-auto w-1/2 items-center justify-center bg-gray-200">
+      <div className="items-center justify-center hidden w-1/2 h-auto bg-gray-200 lg:flex">
         <div className="w-full h-full flex bg-#38A49D">
           <img
             src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/160/7252404160_f7e73f6f-de4e-4158-b8d0-f253ac96bfc4.png?cb=1652138302%22"
             alt="logo"
-            className="object-scale-down h-50 w-90 items-center"
+            className="items-center object-scale-down h-50 w-90"
           />
         </div>
       </div>

@@ -59,7 +59,7 @@ export function CalendarEmployee() {
 
   return (
     <>
-      <h1 className="title text-center text-2xl mt-5">
+      <h1 className="mt-5 text-2xl text-center title">
         <div className="name-month">
           {monthName} {year}
         </div>
@@ -71,7 +71,6 @@ export function CalendarEmployee() {
           </li>
         ))}
       </ul>
-      <br></br>
       <ul className="list-employee">
         {numbersDays.map((number) => (
           <li

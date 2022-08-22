@@ -183,26 +183,25 @@ function HorasView(setUsuario) {
   }
 
   const horas = (
-    <div size="A4" style={{ padding: 0 }}>
-      <div className="w-full min-h-screen bg-gray-200 flex flex-row">
+    <div >
+      <div className="flex flex-row w-full min-h-screen ">
         <section className="flex-1 bg-white">
           <img
-            className="items-baseline w-28 h-30 mt-5 ml-5"
+            className="items-baseline mt-5 ml-5 w-28 h-30"
             src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/160/7252404160_f7e73f6f-de4e-4158-b8d0-f253ac96bfc4.png?cb=1652138302%22"
             alt="logo"
           />
 
-          <CalendarComp />
 
-          <div className="flex justify-center items-center">
-          <div className=" text-card  mt-20  flex items-center justify-center employee rounded-xl w-3/4">
-            <h1 className="text-white text-center py-2 text-lg ">
+          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center w-3/4 mt-10 mb-10 text-card employee rounded-xl">
+            <h1 className="py-2 text-lg text-center text-white ">
               HORAS MENSUALES
             </h1>
           </div>
           </div>
 
-          <div className="w-auto flex items-center justify-center pt-5">
+          <div className="flex items-center justify-center w-auto pt-5">
             <div className="flex flex-row">
               <input
                 type="month"
@@ -220,13 +219,11 @@ function HorasView(setUsuario) {
               />
 
               <button
-                className="bg-gray-300 ml-5
-            text-black py-2 px-4  focus:outline-none focus:shadow-outline 
-            rounded-lg"
+                className="px-4 py-2 ml-5 text-black bg-gray-300 rounded-lg focus:outline-none focus:shadow-outline"
                 onClick={() => {
                   consulta();
                 }}>
-                <div className="flex flex-nowrap justify-center items-center">
+                <div className="flex items-center justify-center flex-nowrap">
                   <div>
                     <AiOutlineSearch className="mr-2" />
                   </div>
@@ -237,8 +234,8 @@ function HorasView(setUsuario) {
           </div>
 
           {/* TABLA DE LAS HORAS DEL EMPLEADO */}
-          <div className="p-5 flex justify-center items-center">
-            <div className="flex justify-center items-center" >
+          <div className="flex items-center justify-center p-5">
+            <div className="flex items-center justify-center" >
               <table id="content-table">
                 <thead className="">
                   <tr>
@@ -261,10 +258,10 @@ function HorasView(setUsuario) {
                   {empleados.map((item) => (
                     <tr className="border-2" key={item.id}>
                       <td className="p-3 text-sm text-gray-700">{item.id}</td>
-                      <td className="p-3 text-sm text-gray-700 text-center">
+                      <td className="p-3 text-sm text-center text-gray-700">
                         {item.completeName}
                       </td>
-                      <td className="p-3 text-sm text-gray-700 text-center">
+                      <td className="p-3 text-sm text-center text-gray-700">
                         {item.totalHours}
                       </td>
                       <td className="p-3 text-sm text-gray-700">
@@ -299,53 +296,51 @@ function HorasView(setUsuario) {
             name={name}
           />
         )}
-        <section className="w-2/6 bg-white pb-2 pt-2">
-          <div
-            className="card-admin bg-gray-700/50 h-screen rounded-3xl xl:w-9/12 ml-20 
-      sm:w-80 sm:h-screen ">
-            <div className="flex justify-center pt-20 space-x-4 ">
-              <p className="font-semibold text-lg text-white">ADMINISTRATOR</p>
-              <button onClick={clicked}>
-                <AiOutlineUser className="text-white w-5 h-5 mt-0" />
-              </button>
-            </div>
-            <div className="pt-10 flex justify-center">
+        <section className="w-2/6 h-full pt-2 pb-2 bg-white">
+            <div
+              className="ml-20 card-admin bg-gray-700/50 rounded-3xl xl:w-9/12 sm:w-80 sm:h-screen"
+            >
+              <div className="flex justify-center pt-10 space-x-4 ">
+                <p className="text-lg font-semibold text-white">
+                  ADMINISTRADOR
+                </p>
+                <button onClick={clicked}>
+                  <AiOutlineUser className="w-5 h-5 mt-0 text-white" />
+                </button>
+              </div>
+
+              <div className="flex justify-center pt-10">
               <img
                 src={defaultImage()}
                 alt=""
-                className="w-32 h-32 rounded-full border-white border-4"
+                className="w-32 h-32 border-4 border-white rounded-full"
               />
-            </div>
-            <div className=" flex justify-center items-center font-bold text-lg  text-white">
-              {firstName} {secondName}
-            </div>
-            <p className=" flex justify-center items-center text-white text-base">
-              {lastName} {secondLastName}
-            </p>
-            <div className="flex justify-center">
-              <h1 className="text-3xl font-bold pt-10 text-white">MAINSOFT</h1>
-            </div>
+              </div>
+              
+        
+              <br/>
+              <div className="flex items-center justify-center text-lg text-white ">
+                {firstName} {secondName}
+              </div>
+              <p className="flex items-center justify-center text-base text-white ">
+                {lastName} {secondLastName}
+              </p>
+              <div className="flex justify-center">
+                <h1 className="pt-5 text-3xl font-bold text-white">MAINSOFT</h1>
+              </div>
 
-            <div className="flex flex-col justify-center items-center mt-16">
-              <button
-                onClick={handleRetunr}
-                className="button-admin text-white border-solid rounded-lg 
-        hover:bg-white hover:text-black xl:w-80 mt-5 py-3 sm:w-52">
-                VOLVER
-              </button>
+              <div className="flex flex-col items-center justify-center mt-5">
+                <button
+                  onClick={handleRetunr}
+                  className="py-2 text-white border-solid rounded-lg button-admin hover:bg-white hover:text-black xl:w-60 sm:w-52"
+                >
+                  REGRESAR
+                </button>
 
-             
-              <button
-                onClick={signOutUser}
-                className="text-black border-solid border-2 py-2 border-white
-        hover:bg-gray-500/50 hover:border-gray-500/50 hover:text-white xl:w-80  mt-5 bg-white rounded-lg
-        sm:w-52">
-                SALIR
-              </button>
+
+              </div>
             </div>
-          </div>
         </section>
-
         {/* -------------------------------------------------------------------- */}
         {/* FIN DE LA TARJETA */}
       </div>

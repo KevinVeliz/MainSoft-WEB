@@ -200,11 +200,11 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
 
 
   return (
-    <div className="bg-neutral-700 bg-opacity-60 fixed inset-0 z-50 justify-center items-center">
-      <div className="justify-center items-center h-screen w-full left-0 top-0  ">
-        <div className=" justify-center modal-space-container flex items-center min-h-screen">
-          <div className="card-content overflow-y-scroll  pt-16 justify-center items-center w-8/12 border-none shadow-lg  flex flex-col pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
-            <div className=" modal-header flex flex-shrink-0 items-center justify-between p-4 rounded-t-md">
+    <div className="fixed inset-0 z-50 items-center justify-center bg-neutral-700 bg-opacity-60">
+      <div className="top-0 left-0 items-center justify-center w-full h-screen scale-95">
+        <div className="flex items-center justify-center min-h-screen modal-space-container">
+          <div className="flex flex-col items-center justify-center w-8/12 pt-10 overflow-y-scroll text-current bg-white border-none rounded-md shadow-lg outline-none pointer-events-auto card-content bg-clip-padding">
+            <div className="flex items-center justify-between flex-shrink-0 p-4 modal-header rounded-t-md">
               <h5
                 className="text-xl font-medium leading-normal text-gray-800"
                 id="exampleModalScrollableLabel"
@@ -234,9 +234,9 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
               />
             )}
             <form className="w-full max-w-lg ml-5">
-              <div className="flex flex-wrap -mx-3 mb-6 ">
-              <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+              <div className="flex flex-wrap mb-6 -mx-3 ">
+              <div className="w-full px-3 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Primer nombre
                   </label>
                   <input
@@ -254,8 +254,8 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
                     onBlur={validationName}
                   />
                 </div>
-                <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Segundo Nombre
                   </label>
                   <input
@@ -274,8 +274,8 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     apellido
                   </label>
                   <input
@@ -294,8 +294,8 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Segundo Apellido
                   </label>
                   <input
@@ -314,8 +314,8 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-1/2 px-3 pt-2">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 pt-2 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Teléfono
                   </label>
                   <input
@@ -335,8 +335,8 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
                   />
                 </div>
 
-                 <div className="w-full md:w-1/2 px-3 pt-2">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                 <div className="w-full px-3 pt-2 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Celular
                   </label>
                   <input
@@ -356,12 +356,12 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-1/2 px-3 pt-2">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 pt-2 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     ID
                   </label>
                   <input
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-last-name"
                     defaultValue={cedula}
                     type="text"
@@ -370,15 +370,15 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-6/12 mb-6 md:mb-0 px-3 mt-2">
-                  <label className=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 mt-2 mb-6 md:w-6/12 md:mb-0">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase ">
                     Estado Civil
                   </label>
-                  <div className=" md:w-auto relative">
+                  <div className="relative md:w-auto">
                     <select
                       onChange={cambioCivilStatus}
                       value={civilstatus}
-                      className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-state"
                     >
                       <option>Soltero/a</option>
@@ -386,9 +386,9 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
                       <option>Divorciado/a</option>
                       <option>Viudo/a</option>
                     </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <div className="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
                       <svg
-                        className="fill-current h-4 w-4"
+                        className="w-4 h-4 fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                       >
@@ -398,23 +398,23 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
                   </div>
                 </div>
 
-                <div className="w-full md:w-6/12 mb-6 md:mb-0 px-3 mt-2">
-                  <label className=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 mt-2 mb-6 md:w-6/12 md:mb-0">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase ">
                     Sexo
                   </label>
-                  <div className=" md:w-auto relative">
+                  <div className="relative md:w-auto">
                     <select
                       onChange={cambioGender}
                       value={gender}
-                      className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-state"
                     >
                       <option>Masculino</option>
                       <option>Femenino</option>
                     </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <div className="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
                       <svg
-                        className="fill-current h-4 w-4"
+                        className="w-4 h-4 fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                       >
@@ -424,25 +424,25 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
                   </div>
                 </div>
 
-                <div className="w-full md:w-6/12 px-3 mb-6 md:mb-0 mt-2">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 mt-2 mb-6 md:w-6/12 md:mb-0">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Fecha de nacimiento
                   </label>
                   <input
                     type="date"
                     onChange={(e) => setDate(e.target.value)}
                     value={birthday}
-                    className=" appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border rounded appearance-none focus:outline-none focus:bg-white"
                     id="grid-first-name"
                     placeholder=""
                   />
                 </div>
-                <div className="w-full md:w-full px-3 pt-2">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 pt-2 md:w-full">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Dirección Domiciliaria
                   </label>
                   <input
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-last-name"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
@@ -451,12 +451,12 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-full px-3 pt-2">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 pt-2 md:w-full">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Correo electrónico
                   </label>
                   <input
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-last-name"
                     defaultValue={email}
                     type="text"
@@ -464,24 +464,24 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-6/12 mb-6 md:mb-0 px-3 mt-2">
-                  <label className=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 mt-2 mb-6 md:w-6/12 md:mb-0">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase ">
                     HORARIO DE TRABAJO
                   </label>
-                  <div className=" md:w-auto relative">
+                  <div className="relative md:w-auto">
                     <select
                       onChange={cambioHorario}
                       value={timetowork}
-                      className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-state"
                     >
                       <option value="08:00:00">Normal</option>
                       <option value="06:00:00">Materno</option>
                       <option value="04:00:00">Permiso</option>
                     </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <div className="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
                       <svg
-                        className="fill-current h-4 w-4"
+                        className="w-4 h-4 fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                       >
@@ -493,7 +493,7 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
               </div>
             </form>
 
-            <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+            <div className="flex flex-wrap items-center justify-end flex-shrink-0 p-4 border-t border-gray-200 modal-footer rounded-b-md">
               <button
                 type="button"
                 onClick={deleteUser}

@@ -110,12 +110,12 @@ export const CambiarClaveEmployee = () => {
   }
 
   return (
-    <div className="flex justify-center items-center mt-20">
+    <div className="flex items-center justify-center mt-10">
       <div className="flex flex-col">
-        <div className="flex justify-center items-center mt-5">
-          <h1 className="font-semibold text-xl"> Cambiar contraseña </h1>
+        <div className="flex items-center justify-center mt-5">
+          <h1 className="text-xl font-semibold"> Cambiar contraseña </h1>
         </div>
-        <div className="text-gray-500 flex justify-center items-center mt-2 w-96 text-justify ">
+        <div className="flex items-center justify-center mt-2 text-justify text-gray-500 w-96 ">
           <p>
             La contraseña debe tener al entre 8 y 16 caracteres, al menos un
             dígito, al menos una minúscula, al menos una mayúscula y al menos un
@@ -129,15 +129,13 @@ export const CambiarClaveEmployee = () => {
           </div>
 
           <input
-            className="shadow appearance-none border rounded-lg 
-          w-full py-4 px-3 text-gray-700 leading-tight 
-          focus:outline-none focus:shadow-outline mt-2"
+            className="w-full px-3 py-4 mt-2 leading-tight text-gray-700 border rounded-lg shadow appearance-none focus:outline-none focus:shadow-outline"
             type={open === false ? "password" : "text"}
             placeholder="***********"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <div className="text-2xl absolute bottom-4 right-5">
+          <div className="absolute text-2xl bottom-4 right-5">
             {open === false ? (
               <AiFillEye onClick={toggle} />
             ) : (
@@ -151,9 +149,7 @@ export const CambiarClaveEmployee = () => {
             <label>Nueva Contraseña</label>
           </div>
           <input
-            className="shadow appearance-none border rounded-lg 
-          w-full py-4 px-3 text-gray-700 leading-tight 
-          focus:outline-none focus:shadow-outline mt-2"
+            className="w-full px-3 py-4 mt-2 leading-tight text-gray-700 border rounded-lg shadow appearance-none focus:outline-none focus:shadow-outline"
             type={open1 === false ? "password" : "text"}
             placeholder="***********"
             value={newPassword}
@@ -162,7 +158,7 @@ export const CambiarClaveEmployee = () => {
             onBlur={validationPassword2}
           />
 
-          <div className="text-2xl absolute bottom-4 right-5">
+          <div className="absolute text-2xl bottom-4 right-5">
             {open1 === false ? (
               <AiFillEye onClick={toggle1} />
             ) : (
@@ -176,16 +172,14 @@ export const CambiarClaveEmployee = () => {
             <label>Confirmar nueva Contraseña</label>
           </div>
           <input
-            className="shadow appearance-none border rounded-lg 
-          w-full py-4 px-3 text-gray-700 leading-tight 
-          focus:outline-none focus:shadow-outline mt-2"
+            className="w-full px-3 py-4 mt-2 leading-tight text-gray-700 border rounded-lg shadow appearance-none focus:outline-none focus:shadow-outline"
             type={open2 === false ? "password" : "text"}
             placeholder="***********"
             value={newPassword2}
             onChange={(e) => setNewPassword2(e.target.value)}
           />
 
-          <div className="text-2xl absolute bottom-4 right-5">
+          <div className="absolute text-2xl bottom-4 right-5">
             {open2 === false ? (
               <AiFillEye onClick={toggle2} />
             ) : (
@@ -205,7 +199,7 @@ export const CambiarClaveEmployee = () => {
         </button>
 
         <div className="mt-5">
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
             <button className="" onClick={handleReturn}>
               <div className="flex flex-row space-x-2 text-gray-500">
                 <div className="mt-1">

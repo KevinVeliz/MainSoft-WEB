@@ -59,11 +59,12 @@ export function CalendarComp() {
 
   return (
     <>
-      <h1 className="title text-center text-2xl">
+      <h1 className="text-2xl text-center title">
         <div className="text-black">
           {monthName} {year}
         </div>
       </h1>
+      <br></br>
       <ul className="list">
         {weekDays.map((date) => (
           <li key={date} className="list_item">
@@ -71,7 +72,6 @@ export function CalendarComp() {
           </li>
         ))}
       </ul>
-      <br></br>
       <ul className="list">
         {numbersDays.map((number) => (
           <li

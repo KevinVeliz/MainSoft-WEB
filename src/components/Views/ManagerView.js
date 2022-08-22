@@ -85,7 +85,7 @@ function ManagerView() {
   const items2 = items.map((item, index) => {
     return (
       <>
-        <tr className=" border-2" key={item.id}>
+        <tr className="border-2 " key={item.id}>
           {/* MODAL CONTROLER USERS */}
           {modalOnUsers && (
             <ModalEmployee
@@ -362,8 +362,8 @@ function ManagerView() {
     swal({
       text: "Imagen de perfil modificada correctamente.",
       icon: "success",
-      button: "Aceptar",
     });
+    window.location.reload(true);
   }
   const validButtonSave=() => {
     if(isLoading===true){
@@ -376,25 +376,25 @@ function ManagerView() {
   return (
     <div>
       {rol === "Gerente" ? (
-        <div className="w-full min-h-screen bg-gray-200 flex flex-row">
+        <div className="flex flex-row w-full min-h-screen">
           <section className="flex-1 bg-white">
             <img
-              className="items-baseline w-28 h-30 mt-5 ml-5"
+              className="items-baseline mt-5 ml-5 w-28 h-30"
               src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/160/7252404160_f7e73f6f-de4e-4158-b8d0-f253ac96bfc4.png?cb=1652138302%22"
               alt="logo"
             />
 
             <CalendarComp />
 
-            <div className="flex justify-center items-center mt-20">
-              <div className=" text-card flex items-center justify-center employee rounded-xl w-3/4  ">
-                <h1 className="text-white text-center py-2 text-lg ">
+            <div className="flex items-center justify-center mt-10">
+              <div className="flex items-center justify-center w-3/4 text-card employee rounded-xl">
+                <h1 className="py-2 text-lg text-center text-white ">
                   EMPLEADOS
                 </h1>
               </div>
             </div>
 
-            <div className="relative flex justify-center items-center mt-9">
+            <div className="relative flex items-center justify-center mt-9">
               <input
                 className="
              
@@ -435,10 +435,10 @@ function ManagerView() {
               </button>
             </div>
 
-            <div className="flex justify-center items-center">
+            <div className="flex items-center justify-center">
               {nameSearch === null && (
-                <table className="ml-5 mt-5 text-sm text-left text-gray-500 dark:text-gray-400" id="content-table">
-                  <thead className=" bg-gray-50 border-2  border-gray-200  ">
+                <table className="mt-5 ml-5 text-sm text-left text-gray-500 dark:text-gray-400" id="content-table">
+                  <thead className="border-2 border-gray-200 bg-gray-50">
                     <tr>
                       <th className="p-3 text-sm font-semibold tracking-wide text-left ">
                         Nombre
@@ -466,10 +466,10 @@ function ManagerView() {
               )}
             </div>
 
-            <div className="flex justify-center items-center">
+            <div className="flex items-center justify-center">
               {nameSearch !== null && (
                 <table className="w-10/12 mt-5 text-sm text-left text-gray-500 dark:text-gray-400" id="content-table">
-                  <thead className=" bg-gray-50 border-2  border-gray-200  ">
+                  <thead className="border-2 border-gray-200 bg-gray-50">
                     <tr>
                       <th className="p-3 text-sm font-semibold tracking-wide text-left ">
                         Nombre
@@ -494,7 +494,7 @@ function ManagerView() {
                   </thead>
                   <tbody>
                     {arrayNameSearch.map((item) => (
-                      <tr className=" border-2 " key={item.id}>
+                      <tr className="border-2 " key={item.id}>
                         {/* MODAL CONTROLER USERS */}
                         {modalOnUsers && (
                           <ModalEmployee
@@ -547,16 +547,16 @@ function ManagerView() {
               )}
             </div>
 
-            <div className="flex flex-row mt-5 justify-end" id="prev-next">
+            <div className="flex flex-row justify-end mt-5" id="prev-next">
               <button onClick={prevHandler}>
-                <div className="flex flex-nowrap justify-center items-center">
+                <div className="flex items-center justify-center flex-nowrap">
                   <div>
                     <IoIosArrowBack className="" />
                   </div>
                   <div>Prev</div>
                 </div>
               </button>
-              <h1 className="mx-5 bg-gray-200/50 rounded-md w-5 flex justify-center items-center">
+              <h1 className="flex items-center justify-center w-5 mx-5 rounded-md bg-gray-200/50">
                 
                 {currentPage + 1}
               </h1>
@@ -565,7 +565,7 @@ function ManagerView() {
                 onClick={nextHandler}
                 disabled={nextButton()}
               >
-                <div className="flex justify-center items-center">
+                <div className="flex items-center justify-center">
                   <div>Next</div>
                   <div>
                     <IoIosArrowForward />
@@ -584,22 +584,21 @@ function ManagerView() {
               setChoiceData={setChoiceData}
             />
           )}
-          <section className="w-2/6 bg-white pb-2 pt-2">
+          <section className="w-2/6 pt-2 pb-2 bg-white">
             <div
-              className="card-admin bg-gray-700/50 h-screen rounded-3xl xl:w-9/12 ml-20 
-        sm:w-80 sm:h-screen "
+              className="h-full ml-20 card-admin bg-gray-700/50 rounded-3xl xl:w-9/12 sm:w-80"
             >
-              <div className="flex justify-center pt-20 space-x-4 ">
-                <p className="font-semibold text-lg text-white"> MANAGER </p>
+              <div className="flex justify-center pt-10 space-x-4 ">
+                <p className="text-lg font-semibold text-white"> MANAGER </p>
                 <button onClick={handleModal}>
-                  <AiOutlineUser className="text-white w-5 h-5 mt-0" />
+                  <AiOutlineUser className="w-5 h-5 mt-0 text-white" />
                 </button>
               </div>
-              <div className="pt-10 flex justify-center">
+              <div className="flex justify-center pt-10">
                 <img
                   src={ imageUser === null ? defaultImage(): imageUser}
                   alt=""
-                  className="w-32 h-32 rounded-full border-white border-4"
+                  className="object-cover w-32 h-32 border-4 border-white rounded-full"
                 />
               </div>
               
@@ -612,51 +611,46 @@ function ManagerView() {
                 onChange={handleFileChange}
               />
     
-              <button onClick={handleClick} className="w-full flex items-center justify-center"> <AiFillEdit className="text-white w-5 h-5 mt-0 " /></button>
-              {imageUser !== null && <button onClick={savePhoto} disabled={validButtonSave()}> Guardar</button>}
-              <div className=" flex justify-center items-center font-bold text-lg  text-white">
+              <button onClick={handleClick} className="flex items-center justify-center w-full"> <AiFillEdit className="w-5 h-5 mt-0 text-white " /></button>
+              {imageUser !== null && 
+              <div className="flex items-center justify-center">
+              <button className="flex items-center justify-center w-32 text-lg text-black bg-white " onClick={savePhoto} disabled={validButtonSave()}> Guardar</button>
+              </div>
+              }
+              <div className="flex items-center justify-center text-lg text-white mt-7 ">
                 {firstName} {secondName}
               </div>
-              <p className=" flex justify-center items-center text-white text-base">
+              <p className="flex items-center justify-center text-base text-white ">
                 {lastName} {secondLastName}
               </p>
               <div className="flex justify-center">
-                <h1 className="text-3xl font-bold pt-10 text-white">
-                  {" "}
-                  MAINSOFT{" "}
-                </h1>
+                <h1 className="pt-5 text-3xl font-bold text-white">MAINSOFT</h1>
               </div>
 
-              <div className="flex flex-col justify-center items-center mt-16">
+              <div className="flex flex-col items-center justify-center mt-5">
                 <button
                   onClick={handleRegister}
-                  className=" button-admin text-white border-solid rounded-lg 
-          hover:bg-white hover:text-black xl:w-80 py-3
-          sm:w-52"
+                  className="py-2 text-white border-solid rounded-lg button-admin hover:bg-white hover:text-black xl:w-80 sm:w-52"
                 >
                   REGISTRAR EMPLEADOS
                 </button>
 
                 <button
                   onClick={handleHours}
-                  className="button-admin text-white border-solid rounded-lg 
-          hover:bg-white hover:text-black xl:w-80 mt-5 py-3 sm:w-52"
+                  className="py-2 mt-5 text-white border-solid rounded-lg button-admin hover:bg-white hover:text-black xl:w-80 sm:w-52"
                 >
                   REPORTE HORAS
                 </button>
 
                 <button
                   onClick={handlePassword}
-                  className="button-admin text-white border-solid rounded-lg 
-          hover:bg-white hover:text-black xl:w-80 mt-5 py-3 sm:w-52"
+                  className="py-2 mt-5 text-white border-solid rounded-lg button-admin hover:bg-white hover:text-black xl:w-80 sm:w-52"
                 >
                   CAMBIAR CLAVE
                 </button>
                 <button
                   onClick={signOutUser}
-                  className="text-black border-solid border-2 py-2 border-white
-          hover:bg-gray-500/50 hover:border-gray-500/50 hover:text-white xl:w-80  mt-5 bg-white rounded-lg
-          sm:w-52"
+                  className="py-2 mt-5 mb-5 text-black bg-white border-2 border-white border-solid rounded-lg hover:bg-gray-500/50 hover:border-gray-500/50 hover:text-white xl:w-80 sm:w-52"
                 >
                   SALIR
                 </button>

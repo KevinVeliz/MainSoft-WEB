@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { db } from "../../firebase/FirebaseConfiguration";
 import ModalEvidence from "./Evidence/ModalEvidence";
 import ModalEvidenceFinish from "./Evidence/ModalEvidenceFinish";
+import { HourEmployee } from "./HourEmployee";
 import ModalAction from "./ModalAction";
 
 const ViewHours = () => {
@@ -407,8 +408,7 @@ const ViewHours = () => {
           />
         )}
         <button
-          className="
-            py-2 px-16 text-lg bg-cyan-500 text-black rounded-xl shadow-lg shadow-cyan-500/50"
+          className="px-16 py-2 text-lg text-black shadow-lg bg-cyan-500 rounded-xl shadow-cyan-500/50"
           onClick={clicked}
           disabled={existDocument === true ? false : true}
         >
@@ -427,8 +427,7 @@ const ViewHours = () => {
           />
         )}
         <button
-          className="
-              py-2 px-16 text-lg bg-red-500 text-black rounded-xl shadow-lg shadow-red-500/50"
+          className="px-16 py-2 text-lg text-black bg-red-500 shadow-lg rounded-xl shadow-red-500/50"
           onClick={saveEvidence}
         >
           IR AL RECESO
@@ -448,8 +447,7 @@ const ViewHours = () => {
           />
         )}
         <button
-          className="
-            py-2 px-16 text-lg bg-lime-500 text-black rounded-xl shadow-lg shadow-lime-500/50"
+          className="px-16 py-2 text-lg text-black shadow-lg bg-lime-500 rounded-xl shadow-lime-500/50"
           onClick={clickedBack}
         >
           VOLVER
@@ -467,8 +465,7 @@ const ViewHours = () => {
         )}
         <button
           disabled={validateButtonOut()}
-          className="
-            py-2 px-16 text-lg bg-blue-500 text-black rounded-xl shadow-lg shadow-yellow-500/50"
+          className="px-16 py-2 text-lg text-black bg-blue-500 shadow-lg rounded-xl shadow-yellow-500/50"
           onClick={saveEvidenceFinish}
         >
           FINALIZAR
@@ -486,8 +483,7 @@ const ViewHours = () => {
         )}
         <button
           disabled={validateButtonOut()}
-          className="
-            py-2 px-16 text-lg bg-blue-500 text-black rounded-xl shadow-lg shadow-yellow-500/50"
+          className="px-16 py-2 text-lg text-black bg-blue-500 shadow-lg rounded-xl shadow-yellow-500/50"
           onClick={saveEvidenceFinish}
         >
           FINALIZAR

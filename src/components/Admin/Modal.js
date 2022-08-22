@@ -6,6 +6,8 @@ import { db } from "../../firebase/FirebaseConfiguration";
 import swal from "sweetalert";
 import expresionesR from "../../validaciones/expresionesRegulares";
 
+import '../../styles/ModalAdmin.css';
+
 const Modal = ({ setModalOn, setChoice }) => {
   const [date, setDate] = useState();
   const [firstName, setFirsName] = useState();
@@ -136,11 +138,11 @@ const Modal = ({ setModalOn, setChoice }) => {
  
 
   return (
-    <div className="overflow-auto bg-neutral-700 bg-opacity-60 fixed inset-0 z-50 justify-center items-center">
-      <div className=" justify-center items-center h-screen w-full left-0 top-0  ">
-        <div className="justify-center modal-space-container flex items-center  min-h-screen ">
-          <div className="justify-center items-center xl:w-5/12 lg:w-7/12 sm:w-11/12 md:w-9/12 modal-content border-none shadow-lg  flex flex-col pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
-            <div className="modal-header flex flex-shrink-0 items-center justify-between p-4 rounded-t-md">
+    <div className="fixed inset-0 z-50 items-center justify-center overflow-auto bg-neutral-700 bg-opacity-60">
+      <div className="top-0 left-0 items-center justify-center w-full ">
+        <div className="flex items-center justify-center scale-95 h-5/6 ">
+          <div className="flex flex-col items-center justify-center text-current bg-white border-none rounded-md shadow-lg outline-none pointer-events-auto xl:w-5/12 lg:w-7/12 sm:w-11/12 md:w-10/12 modal-content bg-clip-padding">
+            <div className="flex items-center justify-between flex-shrink-0 p-4 modal-header rounded-t-md">
               <h5
                 className="text-xl font-medium leading-normal text-gray-800"
                 id="exampleModalScrollableLabel"
@@ -161,22 +163,22 @@ const Modal = ({ setModalOn, setChoice }) => {
               </button>
             </div>
             <form className="w-full max-w-lg ml-5">
-              <div className="flex flex-wrap -mx-3 mb-6 ">
-                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+              <div className="flex flex-wrap mb-6 -mx-3 ">
+                <div className="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Primer Nombre
                   </label>
                   <input
                     disabled
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border rounded appearance-none focus:outline-none focus:bg-white"
                     id="grid-first-name"
                     value={firstName}
                     type="text"
                     placeholder="Primer Nombre"
                   />
                 </div>
-                <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Segundo Nombre
                   </label>
                   <input
@@ -195,13 +197,13 @@ const Modal = ({ setModalOn, setChoice }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Apellido
                   </label>
                   <input
                     disabled
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-last-name"
                     defaultValue={lastName}
                     type="text"
@@ -209,8 +211,8 @@ const Modal = ({ setModalOn, setChoice }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Segundo Apellido
                   </label>
                   <input
@@ -229,8 +231,8 @@ const Modal = ({ setModalOn, setChoice }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-1/2 px-3 pt-2">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 pt-2 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Teléfono
                   </label>
                   <input
@@ -250,8 +252,8 @@ const Modal = ({ setModalOn, setChoice }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-1/2 px-3 pt-2">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 pt-2 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Celular
                   </label>
                   <input
@@ -271,12 +273,12 @@ const Modal = ({ setModalOn, setChoice }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-1/2 px-3 pt-2">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 pt-2 md:w-1/2">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     ID
                   </label>
                   <input
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-last-name"
                     defaultValue={window.id}
                     type="text"
@@ -284,13 +286,13 @@ const Modal = ({ setModalOn, setChoice }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-6/12 mb-6 md:mb-0 px-3 mt-2">
-                  <label className=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 mt-2 mb-6 md:w-6/12 md:mb-0">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase ">
                     Estado Civil
                   </label>
-                  <div className=" md:w-auto relative">
+                  <div className="relative md:w-auto">
                     <select
-                      className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-state"
                       value={civilstatus}
                       onChange={cambioCivilStatus}
@@ -300,9 +302,9 @@ const Modal = ({ setModalOn, setChoice }) => {
                       <option>Divorced</option>
                       <option>Widower</option>
                     </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <div className="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
                       <svg
-                        className="fill-current h-4 w-4"
+                        className="w-4 h-4 fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                       >
@@ -312,13 +314,13 @@ const Modal = ({ setModalOn, setChoice }) => {
                   </div>
                 </div>
 
-                <div className="w-full md:w-6/12 mb-6 md:mb-0 px-3 mt-2">
-                  <label className=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 mt-2 mb-6 md:w-6/12 md:mb-0">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase ">
                     Sexo
                   </label>
-                  <div className=" md:w-auto relative">
+                  <div className="relative md:w-auto">
                     <select
-                      className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                       id="grid-state"
                       value={gender}
                       onChange={cambioGender}
@@ -326,9 +328,9 @@ const Modal = ({ setModalOn, setChoice }) => {
                       <option>Masculino</option>
                       <option>Femenino</option>
                     </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <div className="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
                       <svg
-                        className="fill-current h-4 w-4"
+                        className="w-4 h-4 fill-current"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                       >
@@ -338,26 +340,26 @@ const Modal = ({ setModalOn, setChoice }) => {
                   </div>
                 </div>
 
-                <div className="w-full md:w-6/12 px-3 mb-6 md:mb-0 mt-2">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 mt-2 mb-6 md:w-6/12 md:mb-0">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Fecha de nacimiento
                   </label>
                   <input
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className=" appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border rounded appearance-none focus:outline-none focus:bg-white"
                     id="grid-first-name"
                     placeholder=""
                   />
                 </div>
 
-                <div className="w-full md:w-full px-3 pt-2">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 pt-2 md:w-full">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Dirección de residencia
                   </label>
                   <input
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-last-name"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
@@ -366,12 +368,12 @@ const Modal = ({ setModalOn, setChoice }) => {
                   />
                 </div>
 
-                <div className="w-full md:w-full px-3 pt-2">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="w-full px-3 pt-2 md:w-full">
+                  <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase">
                     Correo electrónico
                   </label>
                   <input
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-last-name"
                     disabled
                     defaultValue={window.email}
@@ -381,7 +383,7 @@ const Modal = ({ setModalOn, setChoice }) => {
                 </div>
               </div>
             </form>
-            <div className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+            <div className="flex flex-wrap items-center justify-end flex-shrink-0 p-4 border-t border-gray-200 modal-footer rounded-b-md">
               <button
                 onClick={handleSubmit}
                 disabled={validateButton()}

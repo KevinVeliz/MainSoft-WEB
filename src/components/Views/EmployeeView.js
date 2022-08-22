@@ -210,14 +210,13 @@ const EmployeeView = () => {
   return (
     <div>
       {rol === "Empleado" ? (
-        <div className="w-full min-h-screen bg-gray-200 flex flex-row">
-          <section className="w-2/5 bg-white pb-2 pt-2 flex ">
+        <div className="flex flex-row w-full min-h-screen bg-gray-200">
+          <section className="flex w-2/5 pt-2 pb-10 bg-white ">
             <div
-              className="card-admin bg-gray-700/50 h-screen rounded-3xl xl:w-8/12 ml-5 
-        sm:w-80 sm:h-screen "
+              className="h-screen ml-5 card-empleado bg-gray-700/50 rounded-3xl xl:w-8/12 sm:w-80 sm:h-screen "
             >
-              <div className="flex justify-center pt-20 space-x-4 ">
-                <p className="font-semibold text-lg text-white"> EMPLEADO</p>
+              <div className="flex justify-center pt-10 space-x-4 ">
+                <p className="text-lg font-semibold text-white"> EMPLEADO</p>
                 {/* MODAL CONTROLER */}
                 {modalData && (
                   <ModalData
@@ -230,14 +229,14 @@ const EmployeeView = () => {
                   onClick={handleModal}
                   disabled={rol === "Empleado" ? false : true}
                 >
-                  <AiOutlineUser className="text-white w-5 h-5 mt-0" />
+                  <AiOutlineUser className="w-5 h-5 mt-0 text-white" />
                 </button>
               </div>
-              <div className="pt-10 flex justify-center">
+              <div className="flex justify-center pt-10">
                 <img
                   src={ imageUser === null ? defaultImage(): imageUser}
                   alt=""
-                  className="w-32 h-32 rounded-full border-white border-4"
+                  className="w-32 h-32 border-4 border-white rounded-full"
                 />
               </div>
               
@@ -250,27 +249,26 @@ const EmployeeView = () => {
                 onChange={handleFileChange}
               />
     
-              <button onClick={handleClick} className="w-full flex items-center justify-center"> <AiFillEdit className="text-white w-5 h-5 mt-0 " /></button>
-              {imageUser !== null &&<div className="flex justify-center items-center">
-              <button className=" flex items-center justify-center w-32 text-black text-lg bg-white
-              "  onClick={savePhoto}  disabled={validButtonSave()}> Guardar</button>
+              <button onClick={handleClick} className="flex items-center justify-center w-full"> <AiFillEdit className="w-5 h-5 mt-0 text-white " /></button>
+              {imageUser !== null &&<div className="flex items-center justify-center">
+              <button className="flex items-center justify-center w-32 text-lg text-black bg-white "  onClick={savePhoto}  disabled={validButtonSave()}> Guardar</button>
               </div>}
          
-              <div className=" flex justify-center items-center font-bold text-lg  text-white">
+              <div className="flex items-center justify-center text-lg font-bold text-white ">
                 {firstName}
               </div>
-              <p className=" flex justify-center items-center text-white text-base">
+              <p className="flex items-center justify-center text-base text-white ">
                 {lastName}
               </p>
               <div className="flex justify-center">
-                <h1 className="text-3xl font-bold pt-10 text-white">
+                <h1 className="pt-10 text-3xl font-bold text-white">
                   
                   MAINSOFT
                 </h1>
               </div>
 
               <div className="flex justify-center">
-                <h1 className="text-3xl font-bold pt-10 text-white">
+                <h1 className="pt-10 text-3xl font-bold text-white">
                   {
                     (horario =
                       timetowork === "08:00:00"
@@ -282,46 +280,31 @@ const EmployeeView = () => {
                 </h1>
               </div>
 
-              <div className="flex flex-col justify-center items-center mt-5">
+              <div className="flex flex-col items-center justify-center mt-5">
                 <button
                   onClick={handleDocuments}
-                  className="buton-modal
-        font-medium py-2 px-16 text-base bg-black text-white rounded-xl 
-        sm:w-5/6 sm:text-base sm:ml-2 sm:mb-4
-        md:w-5/6 md:text-base md:ml-0 md:mb-4
-        lg:ml-2 lg:mb-2 lg:w-5/6
-        xl:w-5/6 xl:ml-2"
+                  className="px-16 py-2 text-base font-medium text-white bg-black buton-modal rounded-xl sm:w-5/6 sm:text-base sm:ml-2 sm:mb-4 md:w-5/6 md:text-base md:ml-0 md:mb-4 lg:ml-2 lg:mb-2 lg:w-5/6 xl:w-5/6 xl:ml-2"
                 >
                   
                   SUBIR ARCHIVOS
                 </button>
                 <button
                   onClick={handleHours}
-                  className="buton-modal
-        font-medium py-2 px-16 text-base bg-black text-white 
-        rounded-xl xl:w-5/6 xl:ml-2
-        lg:ml-2 lg:mb-2 lg:w-5/6 sm:w-5/6 sm:text-base sm:ml-2 sm:mb-4
-        md:ml-0"
+                  className="px-16 py-2 text-base font-medium text-white bg-black buton-modal rounded-xl xl:w-5/6 xl:ml-2 lg:ml-2 lg:mb-2 lg:w-5/6 sm:w-5/6 sm:text-base sm:ml-2 sm:mb-4 md:ml-0"
                 >
                   
                   VER HORAS
                 </button>
                 <button
                   onClick={handlePassword}
-                  className="
-                  font-medium py-2 px-16 text-base bg-black text-white 
-                  rounded-xl xl:w-5/6 xl:ml-2
-                  lg:ml-2 lg:mb-2 lg:w-5/6 sm:w-5/6 sm:text-base sm:ml-2 sm:mb-4
-                  md:ml-0 buton-modal"
+                  className="px-16 py-2 text-base font-medium text-white bg-black rounded-xl xl:w-5/6 xl:ml-2 lg:ml-2 lg:mb-2 lg:w-5/6 sm:w-5/6 sm:text-base sm:ml-2 sm:mb-4 md:ml-0 buton-modal"
                 >
 
                   CAMBIAR CLAVE
                 </button>
                 <button
                   onClick={signOutUser}
-                  className="text-black border-solid border-2 py-2 border-white
-          hover:bg-gray-500/50 hover:border-gray-500/50 hover:text-white xl:w-80  mt-5 bg-white rounded-lg
-          sm:w-52"
+                  className="py-2 mt-5 text-black bg-white border-2 border-white border-solid rounded-lg hover:bg-gray-500/50 hover:border-gray-500/50 hover:text-white xl:w-80 md:w-60 "
                 >
                   SALIR
                 </button>
