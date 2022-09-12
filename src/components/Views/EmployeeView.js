@@ -1,4 +1,4 @@
-import "../../styles/Employee.css";
+import "../styles/Employee.css";
 
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { HourEmployee } from "../Employee/HourEmployee";

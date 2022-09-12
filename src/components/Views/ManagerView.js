@@ -7,7 +7,7 @@ import { UserContext } from "../../Controller/context/UserProvider";
 import { db, storage } from "../../Controller/firebase/FirebaseConfiguration";
 import getPersonalInformation from "../../Controller/services/getPersonalInformation";
 import { CalendarComp } from "../Admin/CalendarCom";
-import "../../styles/Manager.css";
+import "../styles/Manager.css";
 import ModalEmployee from "../Employee/ModalEmployee";
 import ModalManager from "../Manager/ModalManager";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
