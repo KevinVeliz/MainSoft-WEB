@@ -1,28 +1,29 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import Login from "./components/auth/Login";
-import Register from "./components/auth/Register";
-import AdminView from "./components/Views/AdminView";
-import EmployeeView from "./components/Views/EmployeeView";
-import { PagePrincipaly } from "./components/pages/PagePrincipaly";
-import { RegisterEmployes } from "./components/pages/RegisterEmployes";
-import ManagerView from "./components/Views/ManagerView";
-import HorasView from "./components/Admin/Horas";
+
+import Register from "./Pages/auth/Register";
+import AdminView from "./Pages/Views/AdminView";
+import EmployeeView from "./Pages/Views/EmployeeView";
+import { PagePrincipaly } from "./Pages/pages/PagePrincipaly";
+import { RegisterEmployes } from "./Pages/pages/RegisterEmployes";
+import ManagerView from "./Pages/Views/ManagerView";
+import HorasView from "./Pages/Admin/Horas";
 import UserProvider, { UserContext } from "./Controller/context/UserProvider";
 
 import { getAuth, onAuthStateChanged, updateProfile } from "firebase/auth";
-import UploadDocument from "./components/Employee/UploadDocument";
-import ViewHoursEmployee from "./components/Employee/ViewHoursEmployee";
-import { RegisterEmployeeManager } from "./components/Manager/RegisterEmployeeManager";
-import ViewHoursEmployeeManager from "./components/Manager/ViewHoursEmployeeManager";
-import { Cargos } from "./components/Admin/Cargos";
-import { RecuperarClave } from "./components/pages/RecuperarClave";
-import { CambiarClave } from "./components/pages/CambiarClave";
-import { CambiarClaveAdmin } from "./components/Admin/CambiarClaveAdmin";
-import { CambiarClaveManager } from "./components/Manager/CambiarClaveManager";
-import { CambiarClaveEmployee } from "./components/Employee/CambiarClaveEmployee";
+import UploadDocument from "./Pages/Employee/UploadDocument";
+import ViewHoursEmployee from "./Pages/Employee/ViewHoursEmployee";
+import { RegisterEmployeeManager } from "./Pages/Manager/RegisterEmployeeManager";
+import ViewHoursEmployeeManager from "./Pages/Manager/ViewHoursEmployeeManager";
+import { Cargos } from "./Pages/Admin/Cargos";
+import { RecuperarClave } from "./Pages/pages/RecuperarClave";
+import { CambiarClave } from "./Pages/pages/CambiarClave";
+import { CambiarClaveAdmin } from "./Pages/Admin/CambiarClaveAdmin";
+import { CambiarClaveManager } from "./Pages/Manager/CambiarClaveManager";
+import { CambiarClaveEmployee } from "./Pages/Employee/CambiarClaveEmployee";
 import RequireAuth from "./Controller/RequireAuth";
+import Login from "./Pages/auth/Login";
 
 export default function App() {
   const { user, value } = useContext(UserContext);
@@ -55,7 +56,7 @@ export default function App() {
         }
       ></Route>
 
-      {!user && <Route path="/login" element={<Login />}></Route>}
+      {!user && <Route path="/login" element={<Login/>}></Route>}
 
       <Route path="/register" element={<Register />} />
 

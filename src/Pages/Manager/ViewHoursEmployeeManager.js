@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../Controller/context/UserProvider";
 import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import getPersonalInformation from "../../Controller/services/getPersonalInformation";
-import ModalManager from "../Manager/ModalManager";
+import ModalManager from "./ModalManager";
 import "../styles/Manager.css";
 import { CalendarComp } from "../Admin/CalendarCom";
 import jsPDF from "jspdf";
@@ -235,7 +235,7 @@ function ViewHoursEmployeeManager() {
             src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/160/7252404160_f7e73f6f-de4e-4158-b8d0-f253ac96bfc4.png?cb=1652138302%22"
             alt="logo"
           />
-          <div className="flex items-center justify-center w-4/6 mt-20  text-card ml-52 employee rounded-xl">
+          <div className="flex items-center justify-center w-4/6 mt-20 text-card ml-52 employee rounded-xl">
             <h1 className="py-2 text-lg text-center text-white ">
               HORAS MENSUALES
             </h1>

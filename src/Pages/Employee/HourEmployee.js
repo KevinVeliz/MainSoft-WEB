@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import ViewHours from "../Employee/ViewHours";
+import ViewHours from "./ViewHours";
 
 export function HourEmployee() {
   const [timeHours, setTimeHours] = useState();
