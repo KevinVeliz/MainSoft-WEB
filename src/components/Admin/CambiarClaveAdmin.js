@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../Controller/context/UserProvider";
 import swal from "sweetalert";
 
-import '../../styles/Password.css';
+import '../styles/Password.css';
 import expresionesR from "../../Controller/validaciones/expresionesRegulares";
 
 export const CambiarClaveAdmin = () => {
