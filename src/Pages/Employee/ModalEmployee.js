@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 import { db } from "../../Controller/firebase/FirebaseConfiguration";
 
-import "../../styles/Employee.css";
-import "../../styles/ModalEmploye.css";
+import "../styles/Employee.css";
+import "../styles/ModalEmploye.css";
 
 import ModalInformation from "../ModalInformation";
 import swal from "sweetalert";

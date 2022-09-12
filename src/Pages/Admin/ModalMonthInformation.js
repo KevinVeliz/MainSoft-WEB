@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import jsPDF from "jspdf";
 
-import '../../styles/Month.css';
+import '../styles/Month.css';
 
 const ModalMonthInformation = ({
   setModalOnUsers,

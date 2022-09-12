@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
-import "../../styles/Cargos.css";
+import "../styles/Cargos.css";
 import {
   collection,
   deleteDoc,

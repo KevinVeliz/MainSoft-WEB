@@ -6,7 +6,7 @@ import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import swal from "sweetalert";
 import expresionesR from "../../Controller/validaciones/expresionesRegulares";
 
-import '../../styles/ModalAdmin.css';
+import '../styles/ModalAdmin.css';
 
 const Modal = ({ setModalOn, setChoice }) => {
   const [date, setDate] = useState();

@@ -8,12 +8,12 @@ import { UserContext } from "../../Controller/context/UserProvider";
 import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import getPersonalInformation from "../../Controller/services/getPersonalInformation";
 import Modal from "./Modal";
-import "../../styles/AdminView.css";
+import "../styles/AdminView.css";
 import { CalendarComp } from "./CalendarCom";
 import swal from "sweetalert";
 import { LoadingSpinner } from "../loadingSpinner/LoadingSpinner";
 import ModalMonthInformation from "./ModalMonthInformation";
-import "../../styles/HorasPDF.css";
+import "../styles/HorasPDF.css";
 
 function HorasView(setUsuario) {
   const navigate = useNavigate();

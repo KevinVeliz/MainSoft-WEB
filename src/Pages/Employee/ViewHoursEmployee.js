@@ -5,7 +5,7 @@ import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
-import '../../styles/HoursEmpleado.css';
+import '../styles/HoursEmpleado.css';
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoMdArrowBack } from "react-icons/io";
 

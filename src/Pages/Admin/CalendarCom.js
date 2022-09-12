@@ -1,4 +1,4 @@
-import "../../styles/Calendar.css";
+import "../styles/Calendar.css";
 
 const monthNames = [
   "Enero",

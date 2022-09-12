@@ -7,7 +7,7 @@ import { UserContext } from "../../Controller/context/UserProvider";
 import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import getPersonalInformation from "../../Controller/services/getPersonalInformation";
 import ModalManager from "../Manager/ModalManager";
-import "../../styles/Manager.css";
+import "../styles/Manager.css";
 import { CalendarComp } from "../Admin/CalendarCom";
 import jsPDF from "jspdf";
 import swal from "sweetalert";

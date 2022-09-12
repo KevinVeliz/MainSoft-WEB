@@ -11,7 +11,7 @@ import {
   import { useNavigate } from "react-router-dom";
   import swal from "sweetalert";
   
-  import '../../styles/Password.css';
+  import '../styles/Password.css';
 import expresionesR from "../../Controller/validaciones/expresionesRegulares";
   
   export const CambiarClaveManager = () => {
