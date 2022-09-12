@@ -9,6 +9,7 @@ import { LoadingSpinner } from "../loadingSpinner/LoadingSpinner";
 import swal from "sweetalert";
 
 import "./Preloader.css";
+import { actualizarRol } from "../../Controller/services/getRolService";
 
 const Login = () => {
   //con esta linea obtenemos la información del usuario que esta dentro del UserProvider
@@ -28,11 +29,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  async function actualizarRol(email) {
-    const docRef2 = doc(db, "Roles/" + email);
-    const docSnap2 = await getDoc(docRef2);
-    rol.push(docSnap2.data().rol);
-  }
+
 
   const handleSubmit = async (e) => {
     setRol([]);
@@ -40,7 +37,7 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      await actualizarRol(email);
+      await actualizarRol(email, rol);
       await loginUser(email, password);
       setIsLoading(false);
       //console.log("Usuario activo", window.emailVerified);

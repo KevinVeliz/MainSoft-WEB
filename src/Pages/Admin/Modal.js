@@ -26,12 +26,7 @@ const Modal = ({ setModalOn, setChoice }) => {
   const [isValidPhoneNumber, setIsValidPhoneNumber] = useState(null);
   const [isValidNumber, setIsValidNumber] = useState(null);
 
-  const navigate = useNavigate();
 
-  const handleOKClick = () => {
-    setChoice(true);
-    setModalOn(false);
-  };
   const handleCancelClick = () => {
     setChoice(false);
     setModalOn(false);
@@ -51,6 +46,7 @@ const Modal = ({ setModalOn, setChoice }) => {
 
 
   const handleSubmit = async () => {
+    //servicio que necesita traer campos especificos se define dentro de la vista
     await updateDoc(doc(db, "Usuarios/" + window.id), {
       secondName: secondName,
       secondLastName: secondLastName,
@@ -69,6 +65,8 @@ const Modal = ({ setModalOn, setChoice }) => {
       button: "Aceptar",
     });
   };
+
+  //servicio que necesita traer campos especificos se define dentro de la vista
 
   const informationFunction = async (cedula) => {
     const docRef = doc(db, "Usuarios/" + cedula);

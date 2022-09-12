@@ -1,13 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-
-import Register from "./Pages/auth/Register";
-import AdminView from "./Pages/Views/AdminView";
-import EmployeeView from "./Pages/Views/EmployeeView";
+import AdminView from "./Pages/users/AdminView";
+import EmployeeView from "./Pages/users/EmployeeView";
 import { PagePrincipaly } from "./Pages/pages/PagePrincipaly";
 import { RegisterEmployes } from "./Pages/pages/RegisterEmployes";
-import ManagerView from "./Pages/Views/ManagerView";
+import ManagerView from "./Pages/users/ManagerView";
 import HorasView from "./Pages/Admin/Horas";
 import UserProvider, { UserContext } from "./Controller/context/UserProvider";
 
@@ -58,7 +56,7 @@ export default function App() {
 
       {!user && <Route path="/login" element={<Login/>}></Route>}
 
-      <Route path="/register" element={<Register />} />
+      
 
       <Route
         path="/admin"

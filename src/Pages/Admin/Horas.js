@@ -1,10 +1,8 @@
 import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { getAuth } from "firebase/auth";
 import { collection, doc, getDoc, getDocs, query } from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../Controller/context/UserProvider";
+
 import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import getPersonalInformation from "../../Controller/services/getPersonalInformation";
 import Modal from "./Modal";
@@ -22,7 +20,6 @@ function HorasView(setUsuario) {
     navigate("/admin");
   };
 
-  const { user, signOutUser } = useContext(UserContext);
 
   const [firstName, setFirsName] = React.useState();
   const [lastName, setLastName] = React.useState();
@@ -67,6 +64,8 @@ function HorasView(setUsuario) {
     setModalOnUsers(true);
   };
 
+  //servicio que necesita traer campos especificos se define dentro de la vista
+
   const getCedula = async () => {
     const docRef2 = doc(db, "Roles/" + window.email);
     const docSnap2 = await getDoc(docRef2);
@@ -78,6 +77,8 @@ function HorasView(setUsuario) {
       //console.log("No se pudo leer el documento de cedula");
     }
   };
+
+  //servicio que necesita traer campos especificos se define dentro de la vista
 
   const informationFunction = async (cedula) => {
     const docRef = doc(db, "Usuarios/" + cedula);
