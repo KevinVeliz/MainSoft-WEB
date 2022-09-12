@@ -9,9 +9,9 @@ import { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { IoMdArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../context/UserProvider";
+import { UserContext } from "../../Controller/context/UserProvider";
 import swal from "sweetalert";
-import expresionesR from "../../validaciones/expresionesRegulares";
+import expresionesR from "../../Controller/validaciones/expresionesRegulares";
 
 
 export const CambiarClaveEmployee = () => {

@@ -1,7 +1,7 @@
 import { async } from "@firebase/util";
 import { collection, doc, getDoc, getDocs, query } from "firebase/firestore";
 import React, { useState } from "react";
-import { db } from "../../firebase/FirebaseConfiguration";
+import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
@@ -70,7 +70,7 @@ const ViewHoursEmployee = () => {
     if (docSnap2.exists()) {
       setCedula(docSnap2.data().id);
     } else {
-      console.log("No se pudo leer el documento de cedula");
+      //console.log("No se pudo leer el documento de cedula");
     }
   };
 

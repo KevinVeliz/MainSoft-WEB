@@ -1,28 +1,28 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import Login from "./auth/Login";
-import Register from "./auth/Register";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 import AdminView from "./components/Views/AdminView";
 import EmployeeView from "./components/Views/EmployeeView";
-import { PagePrincipaly } from "./pages/PagePrincipaly";
-import { RegisterEmployes } from "./pages/RegisterEmployes";
-import Home from "./components/Home";
+import { PagePrincipaly } from "./components/pages/PagePrincipaly";
+import { RegisterEmployes } from "./components/pages/RegisterEmployes";
 import ManagerView from "./components/Views/ManagerView";
 import HorasView from "./components/Admin/Horas";
-import UserProvider, { UserContext } from "./context/UserProvider";
-import RequireAuth from "./components/RequireAuth";
+import UserProvider, { UserContext } from "./Controller/context/UserProvider";
+
 import { getAuth, onAuthStateChanged, updateProfile } from "firebase/auth";
 import UploadDocument from "./components/Employee/UploadDocument";
 import ViewHoursEmployee from "./components/Employee/ViewHoursEmployee";
 import { RegisterEmployeeManager } from "./components/Manager/RegisterEmployeeManager";
 import ViewHoursEmployeeManager from "./components/Manager/ViewHoursEmployeeManager";
 import { Cargos } from "./components/Admin/Cargos";
-import { RecuperarClave } from "./pages/RecuperarClave";
-import { CambiarClave } from "./pages/CambiarClave";
+import { RecuperarClave } from "./components/pages/RecuperarClave";
+import { CambiarClave } from "./components/pages/CambiarClave";
 import { CambiarClaveAdmin } from "./components/Admin/CambiarClaveAdmin";
 import { CambiarClaveManager } from "./components/Manager/CambiarClaveManager";
 import { CambiarClaveEmployee } from "./components/Employee/CambiarClaveEmployee";
+import RequireAuth from "./Controller/RequireAuth";
 
 export default function App() {
   const { user, value } = useContext(UserContext);
@@ -50,7 +50,7 @@ export default function App() {
         path="/"
         element={
           <RequireAuth>
-            <Home />
+            <Login/>
           </RequireAuth>
         }
       ></Route>

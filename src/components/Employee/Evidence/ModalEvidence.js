@@ -1,7 +1,7 @@
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import React from "react";
-import { db, storage } from "../../../firebase/FirebaseConfiguration";
+import { db, storage } from "../../../Controller/firebase/FirebaseConfiguration";
 import ModalInformation from "../../ModalInformation";
 import swal from "sweetalert";
 
@@ -85,22 +85,22 @@ const ModalEvidence = ({ setModalEvidence, setChoiceEvidence }) => {
           setProgress(progress);
           switch (snapshot.state) {
             case "paused":
-              console.log("La carga está pausada");
+              //console.log("La carga está pausada");
               break;
             case "running":
-              console.log("La carga esta en proceso");
+             // console.log("La carga esta en proceso");
               break;
             default:
               break;
           }
-          console.log("carga compleatada");
+          //console.log("carga compleatada");
         },
         (error) => {
-          console.log("error: " + error);
+          //console.log("error: " + error);
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            console.log("URL: " + downloadURL);
+            //console.log("URL: " + downloadURL);
             setData(downloadURL);
           });
         }

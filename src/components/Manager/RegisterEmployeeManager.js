@@ -1,7 +1,7 @@
 import { collection, doc, getDocs, query, setDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { db, auth2 } from "../../firebase/FirebaseConfiguration";
+import { db, auth2 } from "../../Controller/firebase/FirebaseConfiguration";
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
@@ -9,7 +9,7 @@ import {
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import ModalInformation from "../ModalInformation";
 import swal from "sweetalert";
-import expresionesR from "../../validaciones/expresionesRegulares";
+import expresionesR from "../../Controller/validaciones/expresionesRegulares";
 
 export const RegisterEmployeeManager = () => {
   const [name, setName] = useState();

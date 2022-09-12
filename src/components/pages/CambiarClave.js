@@ -7,7 +7,7 @@ import {
 } from "firebase/auth";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../context/UserProvider";
+import { UserContext } from "../../Controller/context/UserProvider";
 import swal from "sweetalert";
 
 export const CambiarClave = () => {
@@ -49,7 +49,7 @@ export const CambiarClave = () => {
           button: "Aceptar",
         });
       }
-      console.log(e.code, e.message);
+    //  console.log(e.code, e.message);
     }
   };
 

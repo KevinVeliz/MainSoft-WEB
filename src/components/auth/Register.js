@@ -17,7 +17,7 @@ export const Register = () => {
     const lastname = e.target.elements.apellidoField.value;
     const id = e.target.elements.cedulaField.value;
 
-    console.log("Usuario registrado exitosamente");
+    //console.log("Usuario registrado exitosamente");
   }
 
   return (

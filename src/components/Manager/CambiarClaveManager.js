@@ -12,7 +12,7 @@ import {
   import swal from "sweetalert";
   
   import '../../styles/Password.css';
-import expresionesR from "../../validaciones/expresionesRegulares";
+import expresionesR from "../../Controller/validaciones/expresionesRegulares";
   
   export const CambiarClaveManager = () => {
     const [password, setPassword] = useState();

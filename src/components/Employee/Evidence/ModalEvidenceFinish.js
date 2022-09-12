@@ -1,7 +1,7 @@
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import React from "react";
-import { db, storage } from "../../../firebase/FirebaseConfiguration";
+import { db, storage } from "../../../Controller/firebase/FirebaseConfiguration";
 import swal from "sweetalert";
 
 const ModalEvidenceFinish = ({
@@ -96,22 +96,22 @@ const ModalEvidenceFinish = ({
           setProgress(progress);
           switch (snapshot.state) {
             case "paused":
-              console.log("La carga está pausada");
+              //console.log("La carga está pausada");
               break;
             case "running":
-              console.log("La carga esta en proceso");
+              //console.log("La carga esta en proceso");
               break;
             default:
               break;
           }
-          console.log("carga compleatada");
+          //console.log("carga compleatada");
         },
         (error) => {
-          console.log("error: " + error);
+          //console.log("error: " + error);
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            console.log("URL: " + downloadURL);
+            //console.log("URL: " + downloadURL);
             setData(downloadURL);
           });
         }
@@ -169,7 +169,7 @@ const ModalEvidenceFinish = ({
       setLastName(docSnap.data().lastName);
     } else {
       // doc.data() will be undefined in this case
-      console.log("No se pudo leer el documento");
+     // console.log("No se pudo leer el documento");
     }
 
     const docRef2 = doc(
@@ -184,7 +184,7 @@ const ModalEvidenceFinish = ({
       setFinishTime(docSnap2.data().finishTime);
     
     }
-    console.log(
+   /* console.log(
       "Total hours: " +
         startWork +
         " " +
@@ -193,7 +193,7 @@ const ModalEvidenceFinish = ({
         startBack +
         " " +
         finishTime
-    );
+    );*/
   };
 
   const calculateTotalHours = async () => {
@@ -400,7 +400,7 @@ const ModalEvidenceFinish = ({
         }
       );
     } catch (error) {
-      console.log(firstName  + "    "+lastName)
+      //console.log(firstName  + "    "+lastName)
       const completeName = firstName + " " + lastName;
       await setDoc(
         doc(

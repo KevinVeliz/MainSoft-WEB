@@ -1,7 +1,7 @@
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { db } from "../../firebase/FirebaseConfiguration";
+import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import ModalEvidence from "./Evidence/ModalEvidence";
 import ModalEvidenceFinish from "./Evidence/ModalEvidenceFinish";
 import { HourEmployee } from "./HourEmployee";
@@ -220,7 +220,7 @@ const ViewHours = () => {
       setTimeToWork(docSnap.data().timetowork);
     } else {
       // doc.data() will be undefined in this case
-      console.log("No se pudo leer el documento");
+      //console.log("No se pudo leer el documento");
     }
   };
 
@@ -362,7 +362,7 @@ const ViewHours = () => {
       setFinishDay(docSnap.data().finishDay);
     } else {
       // doc.data() will be undefined in this case
-      console.log("No se pudo leer el documento");
+      //console.log("No se pudo leer el documento");
     }
 
     if (workingStateValidate === "FINISHED" && finishDay === diaAnterior) {

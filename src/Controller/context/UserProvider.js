@@ -20,7 +20,7 @@ const UserProvider = ({ children }) => {
   React.useEffect(() => {
     //se ejecuta pero luego se destruye, esto es un observable
     const unsusbribe = onAuthStateChanged(auth, (user) => {
-      console.log("User", user);
+      //console.log("User", user);
 
       if (user) {
         const { email, photoURL, displayName, uid, emailVerified } = user;

@@ -3,9 +3,9 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import React, { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../context/UserProvider";
-import { db, storage } from "../../firebase/FirebaseConfiguration";
-import getPersonalInformation from "../../services/getPersonalInformation";
+import { UserContext } from "../../Controller/context/UserProvider";
+import { db, storage } from "../../Controller/firebase/FirebaseConfiguration";
+import getPersonalInformation from "../../Controller/services/getPersonalInformation";
 import { CalendarComp } from "../Admin/CalendarCom";
 import "../../styles/Manager.css";
 import ModalEmployee from "../Employee/ModalEmployee";
@@ -134,7 +134,7 @@ function ManagerView() {
   });
 
   React.useEffect(() => {
-    console.log("ManagerView correo: ", window.email);
+    //console.log("ManagerView correo: ", window.email);
     getCedula();
     getPersonalInformation().then((usuarios) => {
       setUsuarios(usuarios);
@@ -153,9 +153,9 @@ function ManagerView() {
       informationHours();
     } else {
       // doc.data() will be undefined in this case
-      console.log("No se pudo leer el documento de cedula");
+     // console.log("No se pudo leer el documento de cedula");
     }
-    console.log("ManagerView  cédula: ", window.cedula);
+   // console.log("ManagerView  cédula: ", window.cedula);
   };
 
   const informationFunction = async (cedula) => {
@@ -173,7 +173,7 @@ function ManagerView() {
       }
     } else {
       // doc.data() will be undefined in this case
-      console.log("No se pudo leer el documento");
+     // console.log("No se pudo leer el documento");
     }
   };
 
@@ -319,27 +319,27 @@ function ManagerView() {
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setProgress(progress);
-        console.log("Progress: " + progress);
+       // console.log("Progress: " + progress);
 
         switch (snapshot.state) {
           case "paused":
-            console.log("La carga está pausada");
+          //  console.log("La carga está pausada");
             break;
           case "running":
-            console.log("La carga esta en proceso");
+           // console.log("La carga esta en proceso");
 
             break;
           default:
             break;
         }
-        console.log("carga compleatada");
+       // console.log("carga compleatada");
       },
       (error) => {
-        console.log("error: " + error);
+       // console.log("error: " + error);
       },
        () =>  {
          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("URL: " + downloadURL);
+         // console.log("URL: " + downloadURL);
           setData(downloadURL);
           setIsLoading(true);
         });

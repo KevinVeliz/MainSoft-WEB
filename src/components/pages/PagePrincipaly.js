@@ -1,10 +1,10 @@
 import { doc, getDoc } from "firebase/firestore";
 import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { CalendarDay } from "../components/Calendar";
-import { CalendarComp } from "../components/Admin/CalendarCom";
-import { UserContext } from "../context/UserProvider";
-import { db } from "../firebase/FirebaseConfiguration";
+import { CalendarDay } from "../Calendar";
+import { CalendarComp } from "../Admin/CalendarCom";
+import { UserContext } from "../../Controller/context/UserProvider";
+import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import "../styles/Calendar.css";
 
 export const PagePrincipaly = () => {

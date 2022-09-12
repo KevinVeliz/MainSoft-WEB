@@ -1,6 +1,6 @@
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import React from "react";
-import { storage } from "../../firebase/FirebaseConfiguration";
+import { storage } from "../../Controller/firebase/FirebaseConfiguration";
 
 const UploadCV = ({}) => {
   const [file, setFile] = React.useState(null);
@@ -22,22 +22,22 @@ const UploadCV = ({}) => {
             setProgress(progress);
             switch (snapshot.state) {
               case "paused":
-                console.log("La carga está pausada");
+                //console.log("La carga está pausada");
                 break;
               case "running":
-                console.log("La carga esta en proceso");
+                //console.log("La carga esta en proceso");
                 break;
               default:
                 break;
             }
-            console.log("carga compleatada");
+            //console.log("carga compleatada");
           },
           (error) => {
-            console.log("error: " + error);
+            //.log("error: " + error);
           },
           () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              console.log("URL: " + downloadURL);
+              //console.log("URL: " + downloadURL);
               setData(downloadURL);
             });
           }

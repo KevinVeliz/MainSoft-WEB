@@ -4,14 +4,14 @@ import { getAuth } from "firebase/auth";
 import { collection, doc, getDoc, getDocs, query } from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../context/UserProvider";
-import { db } from "../../firebase/FirebaseConfiguration";
-import getPersonalInformation from "../../services/getPersonalInformation";
+import { UserContext } from "../../Controller/context/UserProvider";
+import { db } from "../../Controller/firebase/FirebaseConfiguration";
+import getPersonalInformation from "../../Controller/services/getPersonalInformation";
 import Modal from "./Modal";
 import "../../styles/AdminView.css";
 import { CalendarComp } from "./CalendarCom";
 import swal from "sweetalert";
-import { LoadingSpinner } from "../../loadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "../loadingSpinner/LoadingSpinner";
 import ModalMonthInformation from "./ModalMonthInformation";
 import "../../styles/HorasPDF.css";
 
@@ -53,8 +53,8 @@ function HorasView(setUsuario) {
   );
 
   React.useEffect(() => {
-    console.log("AdminView correo: ", window.email);
-    console.log("AdminView cédula: ", window.id);
+    //console.log("AdminView correo: ", window.email);
+    //console.log("AdminView cédula: ", window.id);
     getCedula();
     informationFunction(window.id);
     getPersonalInformation().then((usuarios) => {
@@ -75,7 +75,7 @@ function HorasView(setUsuario) {
       window.id = docSnap2.data().id;
       informationFunction(window.id);
     } else {
-      console.log("No se pudo leer el documento de cedula");
+      //console.log("No se pudo leer el documento de cedula");
     }
   };
 
@@ -90,7 +90,7 @@ function HorasView(setUsuario) {
       setUserImage(docSnap.data().imageUser);
     } else {
       // doc.data() will be undefined in this case
-      console.log("No se pudo leer el documento");
+     // console.log("No se pudo leer el documento");
     }
   };
 

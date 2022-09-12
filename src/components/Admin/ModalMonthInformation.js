@@ -1,6 +1,6 @@
 import { collection, getDocs, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { db } from "../../firebase/FirebaseConfiguration";
+import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import jsPDF from "jspdf";
 
 import '../../styles/Month.css';
@@ -26,7 +26,7 @@ const ModalMonthInformation = ({
       const dateMonth = mesConsulta[1];
       setMesLetras(monthNames[dateMonth - 1]);
     }
-    console.log("Nombre del empleado",name)
+    //console.log("Nombre del empleado",name)
   }, []);
 
   const handleCancelClick = () => {

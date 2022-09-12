@@ -3,8 +3,8 @@ import { doc, getDoc } from "firebase/firestore";
 import React, { useContext, useEffect, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../context/UserProvider";
-import { auth, db } from "../firebase/FirebaseConfiguration";
+import { UserContext } from "../../Controller/context/UserProvider";
+import { auth, db } from "../../Controller/firebase/FirebaseConfiguration";
 import { LoadingSpinner } from "../loadingSpinner/LoadingSpinner";
 import swal from "sweetalert";
 

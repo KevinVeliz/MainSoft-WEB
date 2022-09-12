@@ -3,14 +3,14 @@ import { deleteDoc, doc, getDoc, updateDoc } from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { db } from "../../firebase/FirebaseConfiguration";
+import { db } from "../../Controller/firebase/FirebaseConfiguration";
 
 import "../../styles/Employee.css";
 import "../../styles/ModalEmploye.css";
 
 import ModalInformation from "../ModalInformation";
 import swal from "sweetalert";
-import expresionesR from "../../validaciones/expresionesRegulares";
+import expresionesR from "../../Controller/validaciones/expresionesRegulares";
 
 const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
   const [date, setDate] = React.useState();
@@ -59,7 +59,7 @@ const ModalEmployee = ({ setModalOnUsers, setChoiceUsers, cedula }) => {
       setTimeToWork(docSnap.data().timetowork);
     } else {
       // doc.data() will be undefined in this case
-      console.log("No se pudo leer el documento");
+      //console.log("No se pudo leer el documento");
     }
   };
 

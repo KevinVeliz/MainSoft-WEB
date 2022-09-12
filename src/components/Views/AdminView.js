@@ -4,10 +4,10 @@ import React, { useContext, useRef, useState } from "react";
 import "../../styles/AdminView.css";
 import { CalendarComp } from "../Admin/CalendarCom";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../context/UserProvider";
-import { db, storage } from "../../firebase/FirebaseConfiguration";
+import { UserContext } from "../../Controller/context/UserProvider";
+import { db, storage } from "../../Controller/firebase/FirebaseConfiguration";
 import {  doc, getDoc, updateDoc} from "firebase/firestore";
-import getPersonalInformation from "../../services/getPersonalInformation";
+import getPersonalInformation from "../../Controller/services/getPersonalInformation";
 import Modal from "../Admin/Modal";
 import ModalEmployee from "../Employee/ModalEmployee";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
@@ -167,7 +167,7 @@ const AdminView = () => {
   });
 
   React.useEffect(() => {
-    console.log("AdminView: ", window.email);
+    //console.log("AdminView: ", window.email);
     getCedula();
     informationFunction(window.id);
     getPersonalInformation().then((usuarios) => {
@@ -184,7 +184,7 @@ const AdminView = () => {
       window.id = docSnap2.data().id;
       informationFunction(window.id);
     } else {
-      console.log("No se pudo leer el documento de cedula");
+      //console.log("No se pudo leer el documento de cedula");
     }
     //console.log("AdminView  cédula: ", window.id);
   };
@@ -203,7 +203,7 @@ const AdminView = () => {
         setRol(docSnap.data().rol);
       }
     } else {
-      console.log("No se pudo leer el documento");
+      //console.log("No se pudo leer el documento");
     }
   };
 
@@ -324,27 +324,27 @@ const AdminView = () => {
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setProgress(progress);
-        console.log("Progress: " + progress);
+       //console.log("Progress: " + progress);
 
         switch (snapshot.state) {
           case "paused":
-            console.log("La carga está pausada");
+            //console.log("La carga está pausada");
             break;
           case "running":
-            console.log("La carga esta en proceso");
+           // console.log("La carga esta en proceso");
 
             break;
           default:
             break;
         }
-        console.log("carga compleatada");
+      //  console.log("carga compleatada");
       },
       (error) => {
-        console.log("error: " + error);
+       // console.log("error: " + error);
       },
        () =>  {
          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("URL: " + downloadURL);
+          //console.log("URL: " + downloadURL);
           setData(downloadURL);
           setIsLoading(true);
         });

@@ -2,9 +2,9 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { db, storage } from "../../firebase/FirebaseConfiguration";
+import { db, storage } from "../../Controller/firebase/FirebaseConfiguration";
 import swal from "sweetalert";
-import { LoadingSpinner } from "../../loadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "../loadingSpinner/LoadingSpinner";
 
 const UploadDocument = () => {
   //const [file, setFile] = React.useState([]);
@@ -44,7 +44,7 @@ const UploadDocument = () => {
       setFirsName(docSnap.data().firstName);
       setLastName(docSnap.data().lastName);
     } else {
-      console.log("No se pudo leer el documento");
+      //console.log("No se pudo leer el documento");
     }
   };
 
@@ -109,15 +109,15 @@ const UploadDocument = () => {
         setProgress(progress);
         switch (snapshot.state) {
           case "paused":
-            console.log("La carga está pausada");
+            //console.log("La carga está pausada");
             break;
           case "running":
-            console.log("La carga esta en proceso");
+            //console.log("La carga esta en proceso");
             break;
           default:
             break;
         }
-        console.log("carga compleatada");
+        //console.log("carga compleatada");
       },
       (error) => {
         swal({
@@ -128,7 +128,7 @@ const UploadDocument = () => {
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log("URL: " + downloadURL);
+         // console.log("URL: " + downloadURL);
           data.push(downloadURL);
           setIsLoading(false);
         });

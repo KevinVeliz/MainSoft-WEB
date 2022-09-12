@@ -2,9 +2,9 @@ import { doc, getDoc, updateDoc } from "firebase/firestore";
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { db } from "../../firebase/FirebaseConfiguration";
+import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import swal from "sweetalert";
-import expresionesR from "../../validaciones/expresionesRegulares";
+import expresionesR from "../../Controller/validaciones/expresionesRegulares";
 
 import '../../styles/ModalAdmin.css';
 
@@ -86,7 +86,7 @@ const Modal = ({ setModalOn, setChoice }) => {
       setGender(docSnap.data().gender);
       setCivilStatus(docSnap.data().civilStatus);
     } else {
-      console.log("No se pudo leer el documento");
+      //console.log("No se pudo leer el documento");
     }
   };
 

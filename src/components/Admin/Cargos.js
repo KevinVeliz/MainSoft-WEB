@@ -12,11 +12,11 @@ import {
   setDoc,
   updateDoc,
 } from "firebase/firestore";
-import { db } from "../../firebase/FirebaseConfiguration";
+import { db } from "../../Controller/firebase/FirebaseConfiguration";
 import swal from "sweetalert";
 import { AiOutlineUser } from "react-icons/ai";
 import Modal from "./Modal";
-import { UserContext } from "../../context/UserProvider";
+import { UserContext } from "../../Controller/context/UserProvider";
 
 export const Cargos = () => {
   const [cargos, setCargos] = useState();
@@ -112,7 +112,7 @@ export const Cargos = () => {
         setSecondLastName(docSnap.data().secondLastName);
       }
     } else {
-      console.log("No se pudo leer el documento");
+     // console.log("No se pudo leer el documento");
     }
   };
 

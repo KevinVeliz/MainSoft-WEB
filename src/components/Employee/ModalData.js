@@ -1,9 +1,9 @@
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import React, { useState } from "react";
-import { db, } from "../../firebase/FirebaseConfiguration";
+import { db, } from "../../Controller/firebase/FirebaseConfiguration";
 
 import swal from "sweetalert";
-import expresionesR from "../../validaciones/expresionesRegulares";
+import expresionesR from "../../Controller/validaciones/expresionesRegulares";
 
 
 const ModalData = ({ setModalData, setChoiceData }) => {
@@ -81,7 +81,7 @@ const ModalData = ({ setModalData, setChoiceData }) => {
       setCivilStatus(docSnap.data().civilStatus);
       setEmail(docSnap.data().mail);
     } else {
-      console.log("No se pudo leer el documento");
+      //console.log("No se pudo leer el documento");
     }
   };
 

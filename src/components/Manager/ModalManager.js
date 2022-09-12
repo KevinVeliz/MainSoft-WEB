@@ -1,8 +1,8 @@
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import React, { useState } from "react";
-import { db, storage } from "../../firebase/FirebaseConfiguration";
+import { db, storage } from "../../Controller/firebase/FirebaseConfiguration";
 import swal from "sweetalert";
-import expresionesR from "../../validaciones/expresionesRegulares";
+import expresionesR from "../../Controller/validaciones/expresionesRegulares";
 
 const ModalManager = ({ setModalData, setChoiceData }) => {
   const [date, setDate] = React.useState();
@@ -80,7 +80,7 @@ const ModalManager = ({ setModalData, setChoiceData }) => {
       setEmail(docSnap.data().mail);
     } else {
       // doc.data() will be undefined in this case
-      console.log("No se pudo leer el documento");
+      //console.log("No se pudo leer el documento");
     }
   };
 

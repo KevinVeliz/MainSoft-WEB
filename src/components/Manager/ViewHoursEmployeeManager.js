@@ -3,16 +3,16 @@ import { getAuth } from "firebase/auth";
 import { collection, doc, getDoc, getDocs, query } from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../context/UserProvider";
-import { db } from "../../firebase/FirebaseConfiguration";
-import getPersonalInformation from "../../services/getPersonalInformation";
+import { UserContext } from "../../Controller/context/UserProvider";
+import { db } from "../../Controller/firebase/FirebaseConfiguration";
+import getPersonalInformation from "../../Controller/services/getPersonalInformation";
 import ModalManager from "../Manager/ModalManager";
 import "../../styles/Manager.css";
 import { CalendarComp } from "../Admin/CalendarCom";
 import jsPDF from "jspdf";
 import swal from "sweetalert";
 import ModalMonthInformation from "../Admin/ModalMonthInformation";
-import { LoadingSpinner } from "../../loadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "../loadingSpinner/LoadingSpinner";
 
 function ViewHoursEmployeeManager() {
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ function ViewHoursEmployeeManager() {
   const [isLoading, setIsLoading] = useState(false);
   const [choiseUsers, setChoiceUsers] = useState(false);
   React.useEffect(() => {
-    console.log("ManagerView correo: ", window.email);
+    //console.log("ManagerView correo: ", window.email);
     getCedula();
     informationFunction(window.id);
     getPersonalInformation().then((usuarios) => {
@@ -60,7 +60,7 @@ function ViewHoursEmployeeManager() {
       informationFunction(window.id);
     } else {
       // doc.data() will be undefined in this case
-      console.log("No se pudo leer el documento de cedula");
+      //console.log("No se pudo leer el documento de cedula");
     }
     //console.log("AdminView  cédula: ", window.id);
   };
@@ -76,7 +76,7 @@ function ViewHoursEmployeeManager() {
       setUserImage(docSnap.data().imageUser);
     } else {
       // doc.data() will be undefined in this case
-      console.log("No se pudo leer el documento");
+      //console.log("No se pudo leer el documento");
     }
   };
 
@@ -99,7 +99,7 @@ function ViewHoursEmployeeManager() {
       empleados.push(docSnap.data());
     } else {
       // doc.data() will be undefined in this case
-      console.log("No se pudo leer el documento");
+     // console.log("No se pudo leer el documento");
     }
 
     //console.log("arreglo de empleados", empleados);
