@@ -1,7 +1,7 @@
 import { AiOutlineUser, AiFillEdit } from "react-icons/ai";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import React, { useContext, useRef, useState } from "react";
-import "../../styles/AdminView.css";
+import "../styles/AdminView.css";
 import { CalendarComp } from "../Admin/CalendarCom";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../Controller/context/UserProvider";
